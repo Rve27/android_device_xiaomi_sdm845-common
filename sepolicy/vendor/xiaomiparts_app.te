@@ -24,3 +24,21 @@ allow xiaomiparts_app sysfs_thermal:file w_file_perms;
 
 # Allow XiaomiParts to get settingsdebug.instant.packages prop
 get_prop(xiaomiparts_app, settingslib_prop)
+
+# Allow XiaomiParts to read sysfs
+allow xiaomiparts_app sysfs:file r_file_perms;
+
+# Allow XiaomiParts to search sysfs_battery
+allow xiaomiparts_app sysfs_battery_supply:dir search;
+
+# Allow XiaomiParts to read sysfs_battery
+allow xiaomiparts_app sysfs_battery_supply:file r_file_perms;
+
+# Allow XiaomiParts to read sysfs_kgsl
+allow xiaomiparts_app sysfs_kgsl:file r_file_perms;
+
+# Allow XiaomiParts to read kgsl_gpuclk
+allow xiaomiparts_app vendor_sysfs_kgsl_gpuclk:file r_file_perms;
+
+# Allow XiaomiParts to read /proc/stat
+allow xiaomiparts_app proc_stat:file r_file_perms;
